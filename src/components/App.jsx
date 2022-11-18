@@ -1,16 +1,18 @@
+import { ProfileBox } from 'components/UserSocNet/UserSocNet'
+import { StatisticsSection } from 'components/Statistics/StatisticsSection'
+import { FriendList } from './FriendList/FriendList';
+import { Transactions } from './TransactionsHistory/TransactionsHistory';
+import transactions from '../transactions.json'
+ import friends from '../friends.json';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <>
+      <ProfileBox />
+      <StatisticsSection />
+      <FriendList friends={friends} />
+      <Transactions 
+      items={transactions}/>
+    </>
   );
 };
