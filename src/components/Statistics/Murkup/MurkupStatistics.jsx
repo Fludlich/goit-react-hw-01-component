@@ -28,10 +28,12 @@ export const MarkupStatistics = ({ title, stats }) => {
   );
 };
 
-MarkupStatistics.propTypes = {
-  stats: PropTypes.arrayOf(PropTypes.shape({})),
-  label: PropTypes.string,
-  percentage: PropTypes.number,
-  id: PropTypes.number,
-  title: PropTypes.string,
-};
+// MarkupStatistics.propTypes = {
+//   title: PropTypes.string,
+//   stats: PropTypes.arrayOf(PropTypes.shape({
+//     label: PropTypes.string.isRequired,
+//     percentage: PropTypes.number.isRequired,
+//     id: PropTypes.number.isRequired,
+//   })),
+  
+// };

@@ -1,11 +1,11 @@
 import { Description } from './Description/Description';
 import { Stats } from './stats/Stats';
-import user from '../../user.json';
+
 import { Box } from './UserSocNet.styled';
 
-export const stats = user.stats;
+// export const stats = user.stats;
 
-export const ProfileBox = () => {
+export const ProfileBox = ({user}) => {
   return (
     <Box>
       <Description
@@ -15,9 +15,10 @@ export const ProfileBox = () => {
         location={user.location}
       />
       <Stats
-        followers={stats.followers}
-        views={stats.views}
-        likes={stats.likes}
+      
+        followers={user.stats.followers}
+        views={user.stats.views}
+        likes={user.stats.likes}
       />
     </Box>
   );

@@ -1,18 +1,22 @@
 import { ProfileBox } from 'components/UserSocNet/UserSocNet'
 import { StatisticsSection } from 'components/Statistics/StatisticsSection'
 import { FriendList } from './FriendList/FriendList';
-import { Transactions } from './TransactionsHistory/TransactionsHistory';
+import { TransactionHistory } from './TransactionsHistory/TransactionsHistory';
 import transactions from '../transactions.json'
- import friends from '../friends.json';
+import friends from '../friends.json';
+import user from '../user.json';
+
 
 export const App = () => {
   return (
     <>
-      <ProfileBox />
+      <ProfileBox user={user}/>
       <StatisticsSection />
-      <FriendList friends={friends} />
-      <Transactions 
+      <FriendList
+       friends={friends} />
+      <TransactionHistory 
       items={transactions}/>
     </>
   );
 };
+
