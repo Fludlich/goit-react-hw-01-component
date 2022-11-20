@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-export const Box = styled.div``;
-
 export const Statistics = styled.section`
   width: 450px;
   margin: 100px auto 0 auto;

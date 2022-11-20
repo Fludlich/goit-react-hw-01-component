@@ -1,18 +1,44 @@
-import { MarkupStatistics } from './Murkup/MurkupStatistics';
-import data from '../../../src/data.json';
-import { Statistics } from './Statistics.styled';
+// import { MarkupStatistics } from './Murkup/MurkupStatistics';
+
+// import { Statistics } from './Statistics.styled';
 import PropTypes from 'prop-types';
 
-export const StatisticsSection = () => {
+import {
+  Box,
+  Statistics,
+  Title,
+  List,
+  Item,
+  Label,
+  Percentage,
+} from './Statistics.styled';
+
+
+export const Statistic = ({ stats, title }) => {
   return (
     <Statistics>
-      <MarkupStatistics title="UPLOAD STATS" stats={data} />
+      <Title>{title}</Title>
+
+      <List>
+        {stats.map(({ id, label, percentage }) => {
+          return (
+            <Item key={id} style={{ backgroundColor: `#${Math.floor(Math.random()*16777215).toString(16)}` }}>
+              <Label>{label}</Label>
+              <Percentage>{percentage}%</Percentage>
+            </Item>
+          );
+        })}
+      </List>
     </Statistics>
   );
 };
 
-
-
-// MarkupStatistics.propTypes = {
-//   data: PropTypes.arrayOf(PropTypes.shape({}))
-// };
+Statistics.propTypes = {
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ),
+};
